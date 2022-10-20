@@ -28,11 +28,12 @@
 </head>
 
 <body ng-controller="mcon">
-    <!-- example of $scope.$watch -->
-    <input type="text" ng-model="mydata.val">
-    <br>{{mydata.val}}
+    <!-- example of $scope.$watch reseting watcher -->
+    <div>Num: {{num}}</div>
+    <div>Nums: {{nums}}</div>
 
-    <span ng-show="mydata_toolong">Name is too long</span>
+    <button ng-click="increment()">Increment</button>
+    <button ng-click="breakit()">Break It</button>
     <script type="text/javascript" src="app.js"></script>
 </body>
 

@@ -1,12 +1,11 @@
 var app = angular.module("myApp", []);
 app.controller("mcon", function ($scope) {
-    $scope.count= 1;
-    $scope.$watch('mydata.val',function(newVal) {
-        // console.log('yea');
-        $scope.count += 1;
-        console.log($scope.count);
-        if (newVal) {
-            $scope.mydata_toolong = newVal.length > 15;
-        }
-    });
+    $scope.num=0;
+    $scope.nums=[];
+    $scope.increment= function() {
+        $scope.num++;
+    }
+    $scope.breakit=$scope.$watch('num',function() {
+        $scope.nums.push($scope.num)
+    })
 });
