@@ -15,7 +15,9 @@
     <style>
         .orange {
             color: orange;
-        } .red {
+        }
+
+        .red {
             color: red;
         }
 
@@ -26,19 +28,20 @@
 </head>
 
 <body ng-controller="mcon">
-    <!-- example of ngclass -->
-    <h1 ng-class="'orange'">orange</h1>
-    <h1 ng-class="classVar">red</h1>
-    <h1 ng-class="[classVar,'italic']">color and italic</h1>
-
-    <!-- example for ngInclude inluding ngtemplate file-->
-    <div ng-include="'test.html'"></div>
-    
+    <!-- example of ng-model -->
+    Parent first<input type="text" ng-model="mydata1">
+    <br>{{mydata1}}
+    <br>Parent second<input type="text" ng-model="mydata.val">
+    <button ng-click="mydata.val='adding my data'">Add sting</button>
+    <br>{{mydata.val}}
+    <!-- working with sub controller -->
+    <div ng-controller="sub-ctrl">
+        child First<input type="text" ng-model="mydata1">
+        <br>{{mydata1}}
+        <br>child sencond<input type="text" ng-model="mydata.val"> this one remain same as parent second if you tipe here
+        <br>{{mydata.val}}
+    </div>
     <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>
-<!-- exmplate of ngTemplte -->
-<script type="text/ng-template" id="test.html">
-    <h1>Comes from ngtemplate script content</h1>
-</script>
