@@ -38,7 +38,7 @@
     <h2>Second way</h2>
     <input type="text" ng-model="myFIlter2">
     
-    <div ng-repeat="user in mydata2.arr | filter:myFIlter2">
+    <div ng-repeat="user in mydata2.arr | filter:myFIlter2 | orderBy:'age' | limitTo:2">
         name:{{user.name}} |
         age:{{user.age}}
     </div>
