@@ -1,8 +1,4 @@
 angular.module("myApp", []).controller("mcon", function ($scope) {
-  $scope.val2 = 1;
-  $scope.even = false;
-  $scope.test = function () {
-    $scope.val2 += 1;
-    $scope.even = $scope.val2 % 2 == 0;
-  };
+    $scope.myArr2 = ['A','b','c','d','e','f'];
+    $scope.users = [{'name':'test','status':'active'}];
 });

@@ -15,12 +15,18 @@
 </head>
 
 <body ng-controller="mcon">
-    {{val2}}
-    <button ng-click="test()">Click here</button>
-
-    <!-- checking even odd -->
-    <h2 ng-show="even">Even</h2>
-    <h2 ng-hide="even">Odd</h2>
+    <div ng-repeat="row in myArr2">
+        {{$index}} : {{row}} ||
+        <span ng-show="$first">first</span>
+        <span ng-show="$middle">middle</span>
+        <span ng-show="$last">last</span>
+        <span ng-show="$even">even</span>
+        <span ng-show="$odd">odd</span>
+    </div>
+    
+    <div ng-repeat="row in users">
+        {{row.name}}
+    </div>
     <script type="text/javascript" src="app.js"></script>
 </body>
 
