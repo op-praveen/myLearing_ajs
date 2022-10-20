@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  ng-app="myApp">
+<html lang="en" ng-app="myApp">
 
 <head>
     <meta charset="UTF-8">
@@ -12,22 +12,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.min.js"
         integrity="sha512-HdDqpFK+5KwK5gZTuViiNt6aw/dBc3d0pUArax73z0fYN8UXiSozGNTo3MFx4pwbBPldf5gaMUq/EqposBQyWQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .orange {
+            color: orange;
+        } .red {
+            color: red;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+    </style>
 </head>
 
 <body ng-controller="mcon">
-    <div ng-repeat="row in myArr2">
-        {{$index}} : {{row}} ||
-        <span ng-show="$first">first</span>
-        <span ng-show="$middle">middle</span>
-        <span ng-show="$last">last</span>
-        <span ng-show="$even">even</span>
-        <span ng-show="$odd">odd</span>
-    </div>
+    <!-- example of ngclass -->
+    <h1 ng-class="'orange'">orange</h1>
+    <h1 ng-class="classVar">red</h1>
+    <h1 ng-class="[classVar,'italic']">color and italic</h1>
+
+    <!-- example for ngInclude inluding ngtemplate file-->
+    <div ng-include="'test.html'"></div>
     
-    <div ng-repeat="row in users">
-        {{row.name}}
-    </div>
     <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>
+<!-- exmplate of ngTemplte -->
+<script type="text/ng-template" id="test.html">
+    <h1>Comes from ngtemplate script content</h1>
+</script>
