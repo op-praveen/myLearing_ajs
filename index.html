@@ -28,19 +28,13 @@
 </head>
 
 <body ng-controller="mcon">
-    <h1>Example of Built-in filters</h1>
-    <input type="text" ng-model="myFIlter.str">
-    {{myFIlter.str | uppercase}}
-    {{myFIlter.str | date}}
-    <div ng-repeat="user in mydata.arr | filter:myFIlter.str">
-        {{user}}
-    </div>
-    <h2>Second way</h2>
-    <input type="text" ng-model="myFIlter2">
-    
-    <div ng-repeat="user in mydata2.arr | filter:myFIlter2 | orderBy:'age' | limitTo:2">
-        name:{{user.name}} |
-        age:{{user.age}}
+    <h1>Example of Custom filters</h1>
+    <input type="text" ng-model="myFIlter">
+    {{myFIlter | charlimit}}
+
+    <div ng-repeat="user in mydata2.arr | candrink:myFIlter">
+        {{user.name}}
+        {{user.age}}
     </div>
     <script type="text/javascript" src="app.js"></script>
 </body>
