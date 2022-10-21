@@ -12,30 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.min.js"
         integrity="sha512-HdDqpFK+5KwK5gZTuViiNt6aw/dBc3d0pUArax73z0fYN8UXiSozGNTo3MFx4pwbBPldf5gaMUq/EqposBQyWQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <style>
-        .orange {
-            color: orange;
-        }
-
-        .red {
-            color: red;
-        }
-
-        .italic {
-            font-style: italic;
-        }
-    </style>
 </head>
 
 <body ng-controller="mcon">
-    <h1>Example of Custom filters</h1>
-    <input type="text" ng-model="myFIlter">
-    {{myFIlter | charlimit}}
-
-    <div ng-repeat="user in mydata2.arr | candrink:myFIlter">
-        {{user.name}}
-        {{user.age}}
-    </div>
     <script type="text/javascript" src="app.js"></script>
 </body>
 
