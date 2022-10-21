@@ -1,7 +1,12 @@
 var app = angular.module("myApp", []);
-app.controller("mcon", function ($scope,twitterApi, valService) {
-    // twitterApi.url="test";
-    console.log(twitterApi.url,valService);
+app.controller("mcon", function ($scope,myFact) {
+    console.log(myFact.getdata());
 });
-app.constant("twitterApi",{url:"api.twitter.com"});
-app.value("valService",function() {return "this is return from a fn"});
+app.factory("myFact",function(){
+    var mydata = "this is my data";
+    return {
+        getdata:function(){
+            return mydata;
+        }
+    }
+})
